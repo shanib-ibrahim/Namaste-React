@@ -22,6 +22,13 @@
 
 #### 3. What is CDN and Why Do we use it?
 
+-CDN stands for Content Delivery Network.
+-It is a network of distributed servers strategically placed around the world.
+-CDNs deliver web content, including images, scripts, stylesheets, and other assets.
+-Servers are located in various geographic locations (edge locations or PoPs) to reduce latency.
+-Minimizes the time it takes for content to reach end-users by delivering it from nearby servers.
+-Optimizes website and application performance by delivering cached content quickly.
+
 #### 4. Why is React called React?
 
 - Because it is "Reacts" to any state or property changes, and works with data of any form (as deeply structured as the graph itself) so the name is fitting.
