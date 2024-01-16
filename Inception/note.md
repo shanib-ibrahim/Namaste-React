@@ -50,4 +50,3 @@
 - `<script src = ""/>`: Without any attribute in the script tag, the HTML parsing goes on
 - `<script async src = ""/>` : In this case, the HTML parsing goes on. When script tag is encountered, it is **fetched from the network asynchronously parallel to HTML parsing**. Then HTML parsing is paused and the script is executed. **Once the script execution is complete, then HTML parsing resumes**.
 - `<script defer src = ""/>` : In this case, **the HTML parsing goes on and the scripts are fetched in parallel**. Then once the **HTML parsing is complete, then the scripts are executed**. It does not matter when the scripts are available in the browser.
-- ![image](https://github.com/Harshita-Kohli/Namaste-React/assets/54809528/97b1f413-1134-48de-9a54-3d7cda4f6af3)
