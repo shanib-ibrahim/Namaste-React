@@ -44,13 +44,13 @@
 
 # ^ - caret and ~ - tilda
 
--~version “Approximately equivalent to version”, will update you to all future patch versions, without incrementing the minor version. ~1.2.3 will use releases from 1.2.3 to <1.3.0.
+- ~version “Approximately equivalent to version”, will update you to all future patch versions, without incrementing the minor version. ~1.2.3 will use releases from 1.2.3 to <1.3.0.
 
--^version “Compatible with version”, will update you to all future minor/patch versions, without incrementing the major version. ^1.2.3 will use releases from 1.2.3 to <2.0.0.
+- ^version “Compatible with version”, will update you to all future minor/patch versions, without incrementing the major version. ^1.2.3 will use releases from 1.2.3 to <2.0.0.
 
 # Transitive dependencies
 
--A transitive dependency refers to a dependency that is indirectly required by a project. When your project depends on a library (direct dependency), and that library, in turn, depends on other libraries, those additional libraries become transitive dependencies of your project.
+- A transitive dependency refers to a dependency that is indirectly required by a project. When your project depends on a library (direct dependency), and that library, in turn, depends on other libraries, those additional libraries become transitive dependencies of your project.
 
 # Homework Questions
 
@@ -106,20 +106,20 @@
 
 #### 9.gitignore
 
--The .gitignore file is used in Git to specify files and directories that should be ignored by the version control system. When you add files and directories to the .gitignore file, Git will exclude them from being tracked, preventing them from being included in commits. This is particularly useful for files that are generated during the build process, temporary files, or any other files that should not be part of the versioned codebase.
+- The .gitignore file is used in Git to specify files and directories that should be ignored by the version control system. When you add files and directories to the .gitignore file, Git will exclude them from being tracked, preventing them from being included in commits. This is particularly useful for files that are generated during the build process, temporary files, or any other files that should not be part of the versioned codebase.
 
 #### 10.package.json and package-lock.json
 
--package.json defines the project metadata and lists dependencies with version ranges, package-lock.json provides a detailed, version-locked snapshot of the actual dependency tree with specific versions and integrity information. The combination of both files helps ensure consistent and reproducible builds across different environments.
+- package.json defines the project metadata and lists dependencies with version ranges, package-lock.json provides a detailed, version-locked snapshot of the actual dependency tree with specific versions and integrity information. The combination of both files helps ensure consistent and reproducible builds across different environments.
 
 #### 11. Not modify `package-lock.json`?
 
--The primary purpose of package-lock.json is to provide a consistent and reproducible environment for your project by locking down the specific versions of dependencies and their transitive dependencies. Modifying this file manually can lead to inconsistencies across different development environments.
+- The primary purpose of package-lock.json is to provide a consistent and reproducible environment for your project by locking down the specific versions of dependencies and their transitive dependencies. Modifying this file manually can lead to inconsistencies across different development environments.
 
 #### 12. Dist folder
 
--dist folder, short for "distribution," is a common convention used in software development to store files that are generated or compiled for distribution or deployment. This folder typically contains the final version of your project, which is ready to be deployed to a production environment. The contents of the dist folder are often the result of a build process that includes tasks like code transpilation, bundling, minification, and other optimizations.
+- dist folder, short for "distribution," is a common convention used in software development to store files that are generated or compiled for distribution or deployment. This folder typically contains the final version of your project, which is ready to be deployed to a production environment. The contents of the dist folder are often the result of a build process that includes tasks like code transpilation, bundling, minification, and other optimizations.
 
 #### 13. Browserslist
 
--Browserslist is a configuration file used by various front-end tools to specify which browsers and their versions your project should support. It helps tools like Autoprefixer, Babel, ESLint, and others to tailor their output based on the targeted browsers.
+- Browserslist is a configuration file used by various front-end tools to specify which browsers and their versions your project should support. It helps tools like Autoprefixer, Babel, ESLint, and others to tailor their output based on the targeted browsers.
