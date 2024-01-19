@@ -4,12 +4,12 @@
 
 - JSX (JavaScript XML) is a syntax extension for JavaScript that allows you to write HTML-like code within JavaScript.
 - JSX enhances the readability of code, especially when building user interfaces. It looks similar to HTML and is more intuitive for describing the structure of components.
-- Ex: 'const element = <h1>Hello, JSX!</h1>';
+- Ex: const element = ```<h1>Hello, JSX!</h1>```
 
 ## React.createElement:
 
 - React.createElement is a function provided by React to create React elements. It takes at least three arguments: the type of the element (such as a string for HTML tags or a React component), props (properties passed to the element), and children (nested elements).
-- Ex: 'const element = React.createElement('h1', null, 'Hello, JSX!')';
+- Ex: const element = ```React.createElement('h1', null, 'Hello, JSX!')```
 
 # Behind the Scenes of JSX
 
