@@ -1,3 +1,29 @@
+# React.createElement vs JSX
+
+## JSX:
+
+- JSX (JavaScript XML) is a syntax extension for JavaScript that allows you to write HTML-like code within JavaScript.
+- JSX enhances the readability of code, especially when building user interfaces. It looks similar to HTML and is more intuitive for describing the structure of components.
+- Ex: const element = <h1>Hello, JSX!</h1>;
+
+## React.createElement:
+
+- React.createElement is a function provided by React to create React elements. It takes at least three arguments: the type of the element (such as a string for HTML tags or a React component), props (properties passed to the element), and children (nested elements).
+- Ex: const element = React.createElement('h1', null, 'Hello, JSX!');
+
+# Behind the Scenes of JSX
+
+- JSX is transformed into JavaScript code before it is executed by web browsers.
+- This transformation is typically done by a tool called a transpiler. Each JSX element is transformed into a React.createElement function call.
+- This function call creates a virtual representation of the element in the form of a JavaScript object.
+- Virtual DOM elements are then used by React to efficiently update the actual DOM.
+- These JavaScript objects represent the structure of the user interface in a virtual DOM.
+- React DOM is responsible for taking the virtual DOM elements and efficiently updating the actual DOM in the browser.
+
+# Composing Components
+
+- Component composition is the name for passing components as props to other components, thus creating new components with other components.
+
 # HomeWork Questions
 
 ## Q1: What is JSX?
