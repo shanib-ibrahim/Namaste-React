@@ -18,23 +18,6 @@ Low-Level Design: Components in the App
     - Contact
     - Other Links
 
-### Two Types of Exports:
-
-### Default Export:
-
-- If you want to export something by default from a file
-- You can just have a **single** default export from one file
-- Syntax
-  `export default Component;
-import Component from "path";`
-
-### Named Export:
-
-- If you want to **export multiple things** from one file, we use Named Exports
-- Syntax:
-  `export const Component;
-import {Component} from "path";`
-
   ***
 
   ## (HomeWork Questions)
@@ -49,14 +32,14 @@ import {Component} from "path";`
 ### Q2. Is eS6 mandatory for React?
 
 - ES6 (ECMAScript 2015) is not strictly mandatory for writing React applications, but it is highly recommended and widely used in the React community for several reasons:
-  -- Arrow Functions
-  -- Destructuring Assignment
-  -- Template Literals
-  -- Classes
-  -- Let and Const Declarations
-  -- Modules
-  -- Spread Operator
-  -- Default Parameters
+  - Arrow Functions
+  - Destructuring Assignment
+  - Template Literals
+  - Classes
+  - Let and Const Declarations
+  - Modules
+  - Spread Operator
+  - Default Parameters
 
 ### Q3. comments in JSX?
 
