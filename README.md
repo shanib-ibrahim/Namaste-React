@@ -1,65 +1,136 @@
-# React.createElement vs JSX
+## (Planning of our Food Ordering App)
 
-## JSX:
+Low-Level Design: Components in the App
 
-- JSX (JavaScript XML) is a syntax extension for JavaScript that allows you to write HTML-like code within JavaScript.
-- JSX enhances the readability of code, especially when building user interfaces. It looks similar to HTML and is more intuitive for describing the structure of components.
-- Ex: const element = ```<h1>Hello, JSX!</h1>```
+- App
+  - Header
+    - Logo
+    - Nav Items
+  - Body
+    - Search
+    - Card Container
+    - Restaurant Card
+      - Image
+      - Name of Restaurant, Cuisine, Star Rating, Delivery Time
+  - Footer
+    - Copyright
+    - Address
+    - Contact
+    - Other Links
 
-## React.createElement:
+### Two Types of Exports:
 
-- React.createElement is a function provided by React to create React elements. It takes at least three arguments: the type of the element (such as a string for HTML tags or a React component), props (properties passed to the element), and children (nested elements).
-- Ex: const element = ```React.createElement('h1', null, 'Hello, JSX!')```
+### Default Export:
 
-# Behind the Scenes of JSX
+- If you want to export something by default from a file
+- You can just have a **single** default export from one file
+- Syntax
+  `export default Component;
+import Component from "path";`
 
-- JSX is transformed into JavaScript code before it is executed by web browsers.
-- This transformation is typically done by a tool called a transpiler. Each JSX element is transformed into a React.createElement function call.
-- This function call creates a virtual representation of the element in the form of a JavaScript object.
-- Virtual DOM elements are then used by React to efficiently update the actual DOM.
-- These JavaScript objects represent the structure of the user interface in a virtual DOM.
-- React DOM is responsible for taking the virtual DOM elements and efficiently updating the actual DOM in the browser.
+### Named Export:
 
-# Composing Components
+- If you want to **export multiple things** from one file, we use Named Exports
+- Syntax:
+  `export const Component;
+import {Component} from "path";`
 
-- Component composition is the name for passing components as props to other components, thus creating new components with other components.
+  ***
 
-# HomeWork Questions
+  ## (HomeWork Questions)
 
-## Q1: What is JSX?
+### Q1. Is JSX mandatory for React?
 
-- JSX took its name from js-xml-literal, which Jordan modified to just be syntactic sugar for deeply nested function calls.[Read More](https://legacy.reactjs.org/blog/2016/09/28/our-first-50000-stars.html#adding-jsx)
-- Is a Syntax Extension to JS.
-- Stands for JavaScript Syntax Extension( not JavaScript XML!!).
-- React developers came up with this syntax as the React.createElement() was very complicated in case of generating nested DOM structure.
-- It is just an HTML-like/ XML-like syntax but not the same as them.
-- It exists independent of React, but can be used in React to write readable and managable code.
-- It is eventually converted to React.createElement() syntax by Babel, a package that comes as a dependency of Parcel.
-- JSX is not HTML written in JS!!
+- **No, JSX is not a requirement for using React**.
+- Using React without JSX is especially convenient when you **don’t want to set up compilation in your build environment.**
+- Each JSX element is just **syntactic sugar** for calling **React.createElement(component, props, ...children)**.
+- So, anything you can do with JSX can also be done with just plain JavaScript!
 
-## Q2: Super Powers of JSX?
+### Q2. Is eS6 mandatory for React?
 
-- Enables us to write easy, readable and manageable code
-- Behind the scenes, it gets TRANSPILED into React.createElement() by Babel and then it generates React Element
-  - Thus JSX is actually another way of creating React elements rather than using the core React way to create elements.
-- We can write any JS expression/logic in the JSX by using {}. So simply wrap the JS code in {} to execute it and render it dynamically.
-- JSX protects against **DOM XSS(Cross-Site Scripting)** attacks by doing AUTO-ESCAPING and sanitizing the data coming in {}.
-- [More about XSS] - https://owasp.org/www-community/attacks/xss/
+- ES6 (ECMAScript 2015) is not strictly mandatory for writing React applications, but it is highly recommended and widely used in the React community for several reasons:
+  -- Arrow Functions
+  -- Destructuring Assignment
+  -- Template Literals
+  -- Classes
+  -- Let and Const Declarations
+  -- Modules
+  -- Spread Operator
+  -- Default Parameters
 
-## Q3: Role of 'type' attribute in <script> tags? What options can I use there?
+### Q3. comments in JSX?
 
-- It is used to tell the browser what type of script is it.
-- Types of scripts are:
-  - Normal/ Classic script
-  - Module Script
-- We can assign 3 values to 'type' attribute:
-  - `type = ""` ie empty string / don't set the attribute only : In case of normal classic JS script
-  - `type = "module" ` : In case of Module Script, This value causes the code to be treated as a JavaScript module.
+- You'll need to use JavaScript comments inside of JSX.
+- You can use regular /_ Block Comments _/, but they need to be wrapped in curly braces: `{/* A JSX comment */}`
 
-## Q4: {TitleComponent()} vs `<TitleComponent/>` vs `<TitleComponent></TitleComponent>`?
+### Q4. React Fragment vs <></> [Read More](https://react.dev/reference/react/Fragment)
 
-All three are methods to render the TitleComponent functional component in some other component or React element.
+- React Fragments are used to wrap multiple adjacent JSX elements into one single unit without leaving a trace of that wrapping element in the DOM.
+- ```
+     <React.Fragment>
+        <div>Hi</div>
+        <div>Hello</div>
+     </React.Fragment>
+  ```
+- The empty JSX tag <></> is shorthand for <Fragment></Fragment> in most cases:
+  ```
+  <>
+     <h1>Hi</h1>
+     <div>Hello</div>
+   <>
+  ```
 
-- `{TitleComponent()}` : call the TitleComponent function since Fucntional components are at the end of the day JS functions
-- `<TitleComponent/>` : Using self-closing tags
-- `<TitleComponent></TitleComponent>` : Using opening and closing tags
+### Q5. What is Virtual DOM? [Read more on VDOM](https://legacy.reactjs.org/docs/faq-internals.html)
+
+- It is a representation of the actual DOM.
+- It is in the form of a tree of React Elements ie tree of JS objects.
+- Used by React to compute the difference between the previous and the current VDOM to optimally update the actual DOM.
+- It is a programming concept where a virtual representation of the UI is stored in the memory.
+
+### Q6. What is Reconciliation in React? [Read More](https://legacy.reactjs.org/docs/reconciliation.html)
+
+- It is a process by which React finds the **difference between the old VDOM and the new VDOM** whenever there is some **state** update/change.
+- The process in which **React computes which parts of the tree changed**.
+
+### Q7. What is React Fiber? [Read More](https://github.com/acdlite/react-fiber-architecture)
+
+- It is the latest core React Algorithm followed by react to do the Reconciliation process.
+- It came with React 16
+- New way of finding diff and updating the dom
+- Its main feature is INCREMENTAL RENDERING(splitting the rendering work into chunks)
+
+### Q8. Why do we need keys in React? [Read More](https://legacy.reactjs.org/docs/reconciliation.html#keys)
+
+- **Always give a key prop to each child in a list**. Key should be **unique and stable** for every child.
+- Keys uniquely identify list items in React.
+- Helps in DOM manipulations since if there are no keys, all the <Card/>s are treated as same identical.
+- Any new <Card/> added will lead to the entire list being removed and the complete list wiht new <Card/> being re-rendered again.
+- Because does not know which <Card/> was the new one.
+- With 'key' prop, React uniquely identifies each element and only appends the new elements at the specified location
+
+### Q9. Can we use Index as keys? [Read More](https://robinpokorny.com/blog/index-as-a-key-is-an-anti-pattern/)
+
+- It is an anti-pattern in React to use index as a key.
+- We can use it but only as a last resort.
+- Mostly the data we get from backend itself has some unique id for each data element, which can be used as the key prop.
+- Sometimes, if there is no unique id for the data elements,then as a last resort, we can use the index of the element as the key
+- Rule: **Not Using Key <<<<<< Using Index as a Key <<<<<<<<<< Using a uniq id as Key**
+- When all of these 3 are met, you may safely use the index as a key:
+  1.  the list and items are static–they are not computed and do not change;
+  2.  the items in the list have no ids;
+  3.  the list is never reordered or filtered.
+
+### Q10. What are props in React?
+
+- At the end of day they are **normal arguments passed to the React Functional components(which are JS functions at the end of day)**
+- To pass data dynamicaly to a component, we can pass data as props, instead of hard-coding data in that component!
+- ALso lets us reuse the **same component for different items like same card for different restaurant details**!
+- **Passing props to Functional Components === Passing arguments to JS functions**
+
+### Q11. Config-Driven UI? [Read More](https://desicoder.hashnode.dev/config-driven-ui)
+
+- Every web app has a UI layer and a Data Layer.
+- It is a **System-design concept in which the UI layer is driven by the Data Layer. Th UI is dependent upon data coming form backend**
+- We get the Config ie. data from the backend and based on that we decide what and how to render the UI
+- No need to make totally different apps for different parts of the world! If sale in India, but not in America, then based on the config 'sale', we can render the sale component in India and not in America!
+- Controlling the UI using Data
