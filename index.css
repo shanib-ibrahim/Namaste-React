@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 #heading {
   color: red;
 }
@@ -5,6 +11,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #0b1622;
 }
 .profile {
   border: 2px solid black;
@@ -13,10 +20,19 @@
   border-radius: 50%;
 }
 .logo {
-  width: 150px;
+  margin-left: 40px;
+  padding: 10px;
+  width: 80px;
 }
 .profile {
   margin-right: 40px;
   background-image: url("https://as1.ftcdn.net/v2/jpg/02/09/95/42/1000_F_209954204_mHCvAQBIXP7C2zRl5Fbs6MEWOEkaX3cA.jpg");
   background-size: cover;
+}
+.search-bar input {
+  width: 600px;
+  height: 40px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  text-align: center;
 }
