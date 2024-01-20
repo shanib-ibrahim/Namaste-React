@@ -1,0 +1,665 @@
+export const resObj = [
+  {
+    info: {
+      id: "390778",
+      name: "Pulari Restaurant",
+      cloudinaryImageId: "ycufdm38buar431iewre",
+      locality: "Puzhathi Housing Colony",
+      areaName: "South Bazar",
+      costForTwo: "₹250 for two",
+      cuisines: ["Seafood", "Chinese", "Indian", "Kerala"],
+      avgRating: 4.4,
+      parentId: "253022",
+      avgRatingString: "4.4",
+      totalRatingsString: "5K+",
+      sla: {
+        deliveryTime: 21,
+        lastMileTravel: 0.8,
+        serviceability: "SERVICEABLE",
+        slaString: "21 mins",
+        lastMileTravelString: "0.8 km",
+        iconType: "ICON_TYPE_EMPTY",
+      },
+      availability: {
+        nextCloseTime: "2024-01-18 22:20:00",
+        opened: true,
+      },
+      badges: {},
+      isOpen: true,
+      type: "F",
+      badgesV2: {
+        entityBadges: {
+          imageBased: {},
+          textBased: {},
+          textExtendedBadges: {},
+        },
+      },
+      aggregatedDiscountInfoV3: {
+        header: "₹120 OFF",
+        subHeader: "ABOVE ₹199",
+        discountTag: "FLAT DEAL",
+      },
+      orderabilityCommunication: {
+        title: {},
+        subTitle: {},
+        message: {},
+        customIcon: {},
+      },
+      differentiatedUi: {
+        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+        differentiatedUiMediaDetails: {
+          mediaType: "ADS_MEDIA_ENUM_IMAGE",
+          lottie: {},
+          video: {},
+        },
+      },
+      reviewsSummary: {},
+      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+      restaurantOfferPresentationInfo: {},
+    },
+    analytics: {
+      context: "seo-data-0a516844-147d-45c9-9e35-bc76b2bd3de7",
+    },
+    cta: {
+      link: "https://www.swiggy.com/restaurants/pulari-restaurant-puzhathi-housing-colony-south-bazar-kannur-390778",
+      text: "RESTAURANT_MENU",
+      type: "WEBLINK",
+    },
+    widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo",
+  },
+  {
+    info: {
+      id: "395039",
+      name: "Sree Krishnas Pure Vegetarian",
+      cloudinaryImageId: "jxazwjxmfltyhuzzcxo2",
+      locality: "SN Park Road",
+      areaName: "Kannur",
+      costForTwo: "₹149 for two",
+      cuisines: ["South Indian", "Kerala", "Chinese"],
+      avgRating: 4.5,
+      veg: true,
+      parentId: "399424",
+      avgRatingString: "4.5",
+      totalRatingsString: "1K+",
+      sla: {
+        deliveryTime: 16,
+        lastMileTravel: 1.2,
+        serviceability: "SERVICEABLE",
+        slaString: "16 mins",
+        lastMileTravelString: "1.2 km",
+        iconType: "ICON_TYPE_EMPTY",
+      },
+      availability: {
+        nextCloseTime: "2024-01-18 11:50:00",
+        opened: true,
+      },
+      badges: {
+        imageBadges: [
+          {
+            imageId: "v1695133679/badges/Pure_Veg111.png",
+            description: "pureveg",
+          },
+        ],
+      },
+      isOpen: true,
+      type: "F",
+      badgesV2: {
+        entityBadges: {
+          imageBased: {
+            badgeObject: [
+              {
+                attributes: {
+                  description: "pureveg",
+                  imageId: "v1695133679/badges/Pure_Veg111.png",
+                },
+              },
+            ],
+          },
+          textBased: {},
+          textExtendedBadges: {},
+        },
+      },
+      aggregatedDiscountInfoV3: {
+        header: "₹120 OFF",
+        subHeader: "ABOVE ₹199",
+        discountTag: "FLAT DEAL",
+      },
+      orderabilityCommunication: {
+        title: {},
+        subTitle: {},
+        message: {},
+        customIcon: {},
+      },
+      differentiatedUi: {
+        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+        differentiatedUiMediaDetails: {
+          mediaType: "ADS_MEDIA_ENUM_IMAGE",
+          lottie: {},
+          video: {},
+        },
+      },
+      reviewsSummary: {},
+      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+      restaurantOfferPresentationInfo: {},
+    },
+    analytics: {
+      context: "seo-data-0a516844-147d-45c9-9e35-bc76b2bd3de7",
+    },
+    cta: {
+      link: "https://www.swiggy.com/restaurants/sree-krishnas-pure-vegetarian-sn-park-road-kannur-kannur-395039",
+      text: "RESTAURANT_MENU",
+      type: "WEBLINK",
+    },
+    widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo",
+  },
+  {
+    info: {
+      id: "411529",
+      name: "Komalavilas Pure Veg Hotel",
+      cloudinaryImageId: "hvmdeh4p1inptsm4nflo",
+      locality: "Ballard Road",
+      areaName: "Kannur",
+      costForTwo: "₹150 for two",
+      cuisines: ["South Indian", "Kerala", "North Indian"],
+      avgRating: 4.4,
+      veg: true,
+      parentId: "453439",
+      avgRatingString: "4.4",
+      totalRatingsString: "1K+",
+      sla: {
+        deliveryTime: 19,
+        lastMileTravel: 1.4,
+        serviceability: "SERVICEABLE",
+        slaString: "19 mins",
+        lastMileTravelString: "1.4 km",
+        iconType: "ICON_TYPE_EMPTY",
+      },
+      availability: {
+        nextCloseTime: "2024-01-18 21:30:00",
+        opened: true,
+      },
+      badges: {
+        imageBadges: [
+          {
+            imageId: "v1695133679/badges/Pure_Veg111.png",
+            description: "pureveg",
+          },
+        ],
+      },
+      isOpen: true,
+      type: "F",
+      badgesV2: {
+        entityBadges: {
+          imageBased: {
+            badgeObject: [
+              {
+                attributes: {
+                  description: "pureveg",
+                  imageId: "v1695133679/badges/Pure_Veg111.png",
+                },
+              },
+            ],
+          },
+          textBased: {},
+          textExtendedBadges: {},
+        },
+      },
+      aggregatedDiscountInfoV3: {
+        header: "₹120 OFF",
+        subHeader: "ABOVE ₹199",
+        discountTag: "FLAT DEAL",
+      },
+      orderabilityCommunication: {
+        title: {},
+        subTitle: {},
+        message: {},
+        customIcon: {},
+      },
+      differentiatedUi: {
+        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+        differentiatedUiMediaDetails: {
+          mediaType: "ADS_MEDIA_ENUM_IMAGE",
+          lottie: {},
+          video: {},
+        },
+      },
+      reviewsSummary: {},
+      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+      restaurantOfferPresentationInfo: {},
+    },
+    analytics: {
+      context: "seo-data-0a516844-147d-45c9-9e35-bc76b2bd3de7",
+    },
+    cta: {
+      link: "https://www.swiggy.com/restaurants/komalavilas-pure-veg-hotel-ballard-road-kannur-kannur-411529",
+      text: "RESTAURANT_MENU",
+      type: "WEBLINK",
+    },
+    widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo",
+  },
+  {
+    info: {
+      id: "199237",
+      name: "KFC",
+      cloudinaryImageId: "f01666ac73626461d7455d9c24005cd4",
+      locality: "Auto Stand Road",
+      areaName: "Kannur",
+      costForTwo: "₹400 for two",
+      cuisines: ["Burgers", "Biryani", "American", "Snacks", "Fast Food"],
+      avgRating: 4.3,
+      parentId: "547",
+      avgRatingString: "4.3",
+      totalRatingsString: "5K+",
+      sla: {
+        deliveryTime: 19,
+        lastMileTravel: 2,
+        serviceability: "SERVICEABLE",
+        slaString: "19 mins",
+        lastMileTravelString: "2.0 km",
+        iconType: "ICON_TYPE_EMPTY",
+      },
+      availability: {
+        nextCloseTime: "2024-01-18 23:00:00",
+        opened: true,
+      },
+      badges: {},
+      isOpen: true,
+      type: "F",
+      badgesV2: {
+        entityBadges: {
+          imageBased: {},
+          textBased: {},
+          textExtendedBadges: {},
+        },
+      },
+      aggregatedDiscountInfoV3: {
+        header: "₹120 OFF",
+        subHeader: "ABOVE ₹199",
+        discountTag: "FLAT DEAL",
+      },
+      orderabilityCommunication: {
+        title: {},
+        subTitle: {},
+        message: {},
+        customIcon: {},
+      },
+      differentiatedUi: {
+        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+        differentiatedUiMediaDetails: {
+          mediaType: "ADS_MEDIA_ENUM_IMAGE",
+          lottie: {},
+          video: {},
+        },
+      },
+      reviewsSummary: {},
+      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+      restaurantOfferPresentationInfo: {},
+    },
+    analytics: {
+      context: "seo-data-0a516844-147d-45c9-9e35-bc76b2bd3de7",
+    },
+    cta: {
+      link: "https://www.swiggy.com/restaurants/kfc-auto-stand-road-kannur-kannur-199237",
+      text: "RESTAURANT_MENU",
+      type: "WEBLINK",
+    },
+    widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo",
+  },
+  {
+    info: {
+      id: "221225",
+      name: "Ibaco",
+      cloudinaryImageId: "dcys8qphehizrcjz57zc",
+      locality: "SN Park Road",
+      areaName: "Kannur",
+      costForTwo: "₹200 for two",
+      cuisines: ["Desserts", "Ice Cream"],
+      avgRating: 4.5,
+      veg: true,
+      parentId: "3481",
+      avgRatingString: "4.5",
+      totalRatingsString: "500+",
+      sla: {
+        deliveryTime: 17,
+        lastMileTravel: 1.6,
+        serviceability: "SERVICEABLE",
+        slaString: "17 mins",
+        lastMileTravelString: "1.6 km",
+        iconType: "ICON_TYPE_EMPTY",
+      },
+      availability: {
+        nextCloseTime: "2024-01-18 23:00:00",
+        opened: true,
+      },
+      badges: {},
+      isOpen: true,
+      type: "F",
+      badgesV2: {
+        entityBadges: {
+          imageBased: {},
+          textBased: {},
+          textExtendedBadges: {},
+        },
+      },
+      aggregatedDiscountInfoV3: {
+        header: "₹120 OFF",
+        subHeader: "ABOVE ₹199",
+        discountTag: "FLAT DEAL",
+      },
+      orderabilityCommunication: {
+        title: {},
+        subTitle: {},
+        message: {},
+        customIcon: {},
+      },
+      differentiatedUi: {
+        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+        differentiatedUiMediaDetails: {
+          mediaType: "ADS_MEDIA_ENUM_IMAGE",
+          lottie: {},
+          video: {},
+        },
+      },
+      reviewsSummary: {},
+      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+      restaurantOfferPresentationInfo: {},
+    },
+    analytics: {
+      context: "seo-data-0a516844-147d-45c9-9e35-bc76b2bd3de7",
+    },
+    cta: {
+      link: "https://www.swiggy.com/restaurants/ibaco-sn-park-road-kannur-kannur-221225",
+      text: "RESTAURANT_MENU",
+      type: "WEBLINK",
+    },
+    widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo",
+  },
+  {
+    info: {
+      id: "604528",
+      name: "Thalassery Restaurant",
+      cloudinaryImageId: "ohl6mz5wpq2l78zcvfd9",
+      locality: "South Bazaar",
+      areaName: "South Bazar",
+      costForTwo: "₹300 for two",
+      cuisines: ["Biryani", "Chinese"],
+      avgRating: 4.1,
+      parentId: "14391",
+      avgRatingString: "4.1",
+      totalRatingsString: "100+",
+      sla: {
+        deliveryTime: 25,
+        lastMileTravel: 1.1,
+        serviceability: "SERVICEABLE",
+        slaString: "25 mins",
+        lastMileTravelString: "1.1 km",
+        iconType: "ICON_TYPE_EMPTY",
+      },
+      availability: {
+        nextCloseTime: "2024-01-18 22:30:00",
+        opened: true,
+      },
+      badges: {},
+      isOpen: true,
+      type: "F",
+      badgesV2: {
+        entityBadges: {
+          imageBased: {},
+          textBased: {},
+          textExtendedBadges: {},
+        },
+      },
+      aggregatedDiscountInfoV3: {
+        header: "₹120 OFF",
+        subHeader: "ABOVE ₹199",
+        discountTag: "FLAT DEAL",
+      },
+      orderabilityCommunication: {
+        title: {},
+        subTitle: {},
+        message: {},
+        customIcon: {},
+      },
+      differentiatedUi: {
+        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+        differentiatedUiMediaDetails: {
+          mediaType: "ADS_MEDIA_ENUM_IMAGE",
+          lottie: {},
+          video: {},
+        },
+      },
+      reviewsSummary: {},
+      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+      restaurantOfferPresentationInfo: {},
+    },
+    analytics: {
+      context: "seo-data-0a516844-147d-45c9-9e35-bc76b2bd3de7",
+    },
+    cta: {
+      link: "https://www.swiggy.com/restaurants/thalassery-restaurant-south-bazaar-south-bazar-kannur-604528",
+      text: "RESTAURANT_MENU",
+      type: "WEBLINK",
+    },
+    widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo",
+  },
+  {
+    info: {
+      id: "250361",
+      name: "Pizza Hut",
+      cloudinaryImageId: "2b4f62d606d1b2bfba9ba9e5386fabb7",
+      locality: "Edapally - Panvel Highway",
+      areaName: "Kannur",
+      costForTwo: "₹300 for two",
+      cuisines: ["Pizzas"],
+      avgRating: 4,
+      parentId: "721",
+      avgRatingString: "4.0",
+      totalRatingsString: "5K+",
+      sla: {
+        deliveryTime: 29,
+        lastMileTravel: 1.3,
+        serviceability: "SERVICEABLE",
+        slaString: "29 mins",
+        lastMileTravelString: "1.3 km",
+        iconType: "ICON_TYPE_EMPTY",
+      },
+      availability: {
+        nextCloseTime: "2024-01-19 00:00:00",
+        opened: true,
+      },
+      badges: {},
+      isOpen: true,
+      type: "F",
+      badgesV2: {
+        entityBadges: {
+          imageBased: {},
+          textBased: {},
+          textExtendedBadges: {},
+        },
+      },
+      aggregatedDiscountInfoV3: {
+        header: "ITEMS",
+        subHeader: "AT ₹179",
+      },
+      orderabilityCommunication: {
+        title: {},
+        subTitle: {},
+        message: {},
+        customIcon: {},
+      },
+      differentiatedUi: {
+        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+        differentiatedUiMediaDetails: {
+          mediaType: "ADS_MEDIA_ENUM_IMAGE",
+          lottie: {},
+          video: {},
+        },
+      },
+      reviewsSummary: {},
+      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+      restaurantOfferPresentationInfo: {},
+    },
+    analytics: {
+      context: "seo-data-0a516844-147d-45c9-9e35-bc76b2bd3de7",
+    },
+    cta: {
+      link: "https://www.swiggy.com/restaurants/pizza-hut-edapally-panvel-highway-kannur-kannur-250361",
+      text: "RESTAURANT_MENU",
+      type: "WEBLINK",
+    },
+    widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo",
+  },
+  {
+    info: {
+      id: "418595",
+      name: "A One Hotel",
+      cloudinaryImageId: "ccyexp4sbe1cahxs79sx",
+      locality: "Thana - Anayidukku Road",
+      areaName: "Thana",
+      costForTwo: "₹200 for two",
+      cuisines: ["South Indian", "Kerala", "Seafood"],
+      avgRating: 4.3,
+      parentId: "24754",
+      avgRatingString: "4.3",
+      totalRatingsString: "1K+",
+      sla: {
+        deliveryTime: 17,
+        lastMileTravel: 1.6,
+        serviceability: "SERVICEABLE",
+        slaString: "17 mins",
+        lastMileTravelString: "1.6 km",
+        iconType: "ICON_TYPE_EMPTY",
+      },
+      availability: {
+        nextCloseTime: "2024-01-18 22:00:00",
+        opened: true,
+      },
+      badges: {},
+      isOpen: true,
+      type: "F",
+      badgesV2: {
+        entityBadges: {
+          imageBased: {},
+          textBased: {},
+          textExtendedBadges: {},
+        },
+      },
+      aggregatedDiscountInfoV3: {
+        header: "₹120 OFF",
+        subHeader: "ABOVE ₹199",
+        discountTag: "FLAT DEAL",
+      },
+      orderabilityCommunication: {
+        title: {},
+        subTitle: {},
+        message: {},
+        customIcon: {},
+      },
+      differentiatedUi: {
+        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+        differentiatedUiMediaDetails: {
+          mediaType: "ADS_MEDIA_ENUM_IMAGE",
+          lottie: {},
+          video: {},
+        },
+      },
+      reviewsSummary: {},
+      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+      restaurantOfferPresentationInfo: {},
+    },
+    analytics: {
+      context: "seo-data-0a516844-147d-45c9-9e35-bc76b2bd3de7",
+    },
+    cta: {
+      link: "https://www.swiggy.com/restaurants/a-one-hotel-anayidukku-road-thana-kannur-418595",
+      text: "RESTAURANT_MENU",
+      type: "WEBLINK",
+    },
+    widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo",
+  },
+  {
+    info: {
+      id: "473419",
+      name: "Ghazal",
+      cloudinaryImageId: "34ba760fd6650015fc80445c4c66bd02",
+      locality: "PS Road",
+      areaName: "SN Park",
+      costForTwo: "₹200 for two",
+      cuisines: ["Chinese", "North Indian", "Arabian", "Biryani"],
+      avgRating: 4.1,
+      parentId: "87259",
+      avgRatingString: "4.1",
+      totalRatingsString: "500+",
+      sla: {
+        deliveryTime: 26,
+        lastMileTravel: 2,
+        serviceability: "SERVICEABLE",
+        slaString: "26 mins",
+        lastMileTravelString: "2.0 km",
+        iconType: "ICON_TYPE_EMPTY",
+      },
+      availability: {
+        nextCloseTime: "2024-01-18 10:35:00",
+        opened: true,
+      },
+      badges: {
+        imageBadges: [
+          {
+            imageId: "v1690360529/Ratnesh_Badges/Only_on_swiggy_badge_4x.png",
+            description: "OnlyOnSwiggy",
+          },
+        ],
+      },
+      isOpen: true,
+      type: "F",
+      badgesV2: {
+        entityBadges: {
+          imageBased: {
+            badgeObject: [
+              {
+                attributes: {
+                  description: "OnlyOnSwiggy",
+                  imageId:
+                    "v1690360529/Ratnesh_Badges/Only_on_swiggy_badge_4x.png",
+                },
+              },
+            ],
+          },
+          textBased: {},
+          textExtendedBadges: {},
+        },
+      },
+      aggregatedDiscountInfoV3: {
+        header: "₹120 OFF",
+        subHeader: "ABOVE ₹199",
+        discountTag: "FLAT DEAL",
+      },
+      orderabilityCommunication: {
+        title: {},
+        subTitle: {},
+        message: {},
+        customIcon: {},
+      },
+      differentiatedUi: {
+        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+        differentiatedUiMediaDetails: {
+          mediaType: "ADS_MEDIA_ENUM_IMAGE",
+          lottie: {},
+          video: {},
+        },
+      },
+      reviewsSummary: {},
+      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+      restaurantOfferPresentationInfo: {},
+    },
+    analytics: {
+      context: "seo-data-0a516844-147d-45c9-9e35-bc76b2bd3de7",
+    },
+    cta: {
+      link: "https://www.swiggy.com/restaurants/ghazal-ps-road-sn-park-kannur-473419",
+      text: "RESTAURANT_MENU",
+      type: "WEBLINK",
+    },
+    widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo",
+  },
+];
