@@ -1,116 +1,105 @@
+# Notes
+
+## Best practices of useState() hook
+
+- Never use it outside the body of the component. It does not make any sense, since useState() is used to make local state variables inside the functional components.
+- Always call useState() at the very beginning of the component. So the first thing to do in a component is to create the state variables.
+- Never call useState() inside an if block/loop/nested function. Create state variables at the top-level of the component. This ensures that the hook is always called in the same order each time the component renders.
+
+## Steps to create routes in a React app
+
+- Step1: We imported the **createBrowserRouter** from **'react-router-dom'**
+- Step2: We call **createBrowserRouter()**, it takes some configuration in it.
+  This configuration is a list/array of objects
+  Each object defines a different path and what to render on that path
+- Step3: After creating the router configuration, we need to provide it to render the things as per the path
+  So we import **RouterProvider** from react-router-dom package
+- Step4: We do **`root.render(<RouterProvider route = {ourRouteConfiguration}/>)`** instead of root.render(<AppLayout/>) directly
+
+```
+import {createBrowserRouter, RouterProvider} from 'react-router-dom';
+const appRouter = createBrowserRouter([
+       {
+              path:"/",
+              element:<AppLayout/>,
+              errorElement:<Error/>
+       },
+       {
+              path:"/about",
+              element:<About/>,
+              errorElement:<Error/>
+       }
+]);
+'
+'
+'
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<RouterProvider router = {appRouter}/>);
+```
+
+## Handling route errors in React app
+
+- Suppose we try to go ona wrong route, which has not been defined. Such a case must be handled gracefully.
+- React-Router-DOM itself handles the error somewhat but not in a gracefull and fancy way.
+- So we are provided with the **useRouteError() hook**.
+- It returns the **error object** from which we can access the various details of the error and then we can display some graceful UI page with the error details.
+
+## Use case of the Link component
+
+- **`<Link></Link>` component** is a superpower given to us by 'react-router-dom'.
+- When we wrap something in it, eg: **`<Link>About Us</Link>`**, if About Us is clicked, **the page won't reload. Instead, the `<About/>` Component will be loaded in the DOM.**
+- It helps in avoiding **full page reload** and **just refreshing the components that are required.**
+- **<Link> is a wrapper over anchor tag**. It tells the **router-dom not to reload the entire page when that path is visited.**
+- If we see in the Elements tab, we won't see <Link/>, we will see `<a></a>` tag. **This proves that behind the scenes <Link/> uses anchor tag.**
+- It makes our React App really **fast and performant.**
+
+  ***
+
 # Homework Questions
 
-#### 1. What is a Microservice?
+#### 1.What are various ways to add images into our App? Explain with code examples
 
-- A Microservice is an **independently existing service in Microservice architecture.**
-- Each microservice is **independently deployable. and has its own business logic.**
-- Each microservice has its **own single responsibility** and **exists independently** in Microservice Architecture.
-- Updating, testing, deploying everything occurs within each microservice.
+- Using img tag in JSX:
+- Importing images in React component:
+- Using public folder:
+- CSS with background-image property:
 
-#### 2. What is Monolithic Architecture?
+#### 2. What would happen if we do console.log(useState())?
 
-- It is the traditional architecture where all the **various functionality like UI, Backend, DB, APIs, SMS, Email Notifications is written in the same single big project.**
-- To make a single small change in the app (eg: changing the color of a button in the UI), the **entire project needs to be built and compiled again**.
-- All the code of various services is in the same single project and we need to be **deploy the whole BULKY project.**
-- It can be thought of as a **unified large glacial unit with just one code base**.
-- All the **business logics are coupled together in the same project.**
+- We would get an **array of 2 elements in the console:  [undefined, ƒ].**
+- The first element being the state variable which is **undefined** since we didn't give any default value for it while calling the useState() hook.
+- The second one being the **state-updating function f().**
 
-#### 3. Monolith vs Microservice?
+#### 3. How will useEffect() behave if we don't add a dependency array?
 
-| Point                      | Monolith                                                                                                                       | Microservice Architecture                                                                          |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------- |
-| **Single Responsibility**  | There is one large code base where all the services are coupled together, so no SRP concept.                                   | The code base is split among multiple services, each service having its own single responsibility. |
-| **Deployment**             | Need to re-deploy the entire bulky code even on small changes in the app.                                                      | Each small microservice is independently deployable, so faster and more frequent release cycles.   |
-| **Difficulty in Changing** | A single small change in the app requires the entire big project to be built and compiled again.                               | Since each microservice is independent, we need not rebuild the entire project.                    |
-| **Flexibility**            | The technology/tech stack has to be the same throughout the whole project. Also use the same tech as used already in monolith. | Each team can choose the tech stack for each microservice, so no restrictions.                     |
-| **Development Speed**      | A large monolithic app makes development more complex and slow.                                                                | Each service is independently developed, so easy and quick development.                            |
+- When the second parameter of useEffect() i.e. the dependency array is missing, it gets called upon after every component-render.
+- Here are the different cases of useEffect():
 
-#### 4. Why do we need a useEffect Hook?
+| **No dependency Array**                            | **Empty Dependency Array([ ])**                                           | **Dependency Array having something [.,.,. ]**                                               |
+| -------------------------------------------------- | ------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| useEffect() shows its default behavior             | useEffect's behaviour is changed by the dependency array                  | useEffect's behaviour is changed by the dependency array                                     |
+| It gets called after every render of the component | useEffect gets called only once after the initial render of the component | useEffect gets called after initial render + every time any of the dependencies get changed. |
 
-- useEffect() hook is another **utility function provided by React out-of-the-box**.
-- It takes 2 parameters: **callback function and dependency array(this is optional parameter)**.
-- It is used when **we need to do something after the component has been rendered**. We put that code inside useEffect's callback function.
-- Mostly, we make some **API call in it because that is a side-effect**. The API call can affect the UI of our app, so we don't want it to interfere with the rendering of the UI.
-- So,it is useful for **rendering the data on the web page in the case when we want the Skeleton Component to be rendered first quickly, then make API call and then re-render the component with the actual data**.
+#### 4. What is SPA?
 
-#### 5. What is Optional Chaining?
+- SPA stands for **Single Page Application.**
+- It is such an application that **has a single HTML page being rendered to the DOM.**
+- It has a single page being rendered, and all the new pages that we see are just **"Components interchanging themselves".**
+- If we go on **a new route**, **no new HTML page is loaded** into the browser. We just **change/refresh the components in the same single HTML page.**
+- In an SPA, the **browser does not need to make external calls to fetch the different pages**.
+- SPAs are **very fast and dynamically-loaded** since **no need to make network calls**.
 
-- It is a JS concept wherein we use the '?.' operator while reading some property from an object or calling a function.
-- It is helpful when there is a possibility that a reference might be missing.
-- If the object accessed/ function called evaluates to null/undefined, the expression shortcircuits and evaluates to undefined rather than throwing an error.
-- Eg: `const a = obj.first?.second;`
+#### 5. What is the difference between Client-Side Routing and Server-Side Routing?
 
-Here JS implicitly checks that `obj.first` is not null or undefined before attempting to access obj.first.second.
-If `obj.first` is null or undefined, then the entire expression is short-circuited and evaluated to undefined, thus `a = undefined`
+| **Server-Side Routing**                                                                                                                           | **Client-Side Routing**                                                                                                                                                             |
+| ------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| When we click an anchor tag, **it reloads the entire app, sends a network call to that page and fetches the HTML and renders it on the webpage.** | When we click some link/anchor tag, **no network call is made. We just load the required component in that place where needed in the DOM**. **The entire webpage is not reloaded**. |
+| This was how the websites worked traditionally.                                                                                                   | Here, all the **components are already loaded into the browser.** So there is no need to make network calls to the server to fetch the pages.                                       |
+| Makes our **app slow** because behind the scenes, there are a **lot of network calls being made and every time, the entire app gets reloaded.**   | Makes our **app fast** because there is **no re-loading of the entire app**. [**React achieves Client-Side Routing using React-Router library**]                                    |
 
-#### 6. What is Shimmer UI? [Read More](https://medium.com/lattice-what-is/shimmer-ui-a-better-way-to-show-loading-states-aa1f4e563d17)
+````
 
-- Shimmer UI is a concept where we show **Dummy shimmery UI while loading the app**.
-- This is not the actual UI but a **dummy UI having Cards and other elements as placeholders untill the actual UI loads**.
-- This gives a better UX since it is like providing **some cues to the user as to what is going to load on the screen**.
-- It is makes our **app-loading state visually good** since we don't shock the user suddenly with all the UI, rather we prepare them for what layout is coming on the screen.
+```
 
-#### 7. What is the difference between JS Expression and JS Statement?
-
-- JS Expression is any **JS code that produces a value**. It **can't exist individually and is a part of a JS statement**.
-- **An expression itself can have expressions in it**.
-- Eg: The following are JS Expressions since they evaluate to some value
-  - `1` → produces 1
-  - `"hello"` → produces "hello"
-  - `5 * 10` → produces 50
-  - `( 5 + 1 ) * 2` → produces 12. This has a total of 5 expressions in it. [Read More](https://www.joshwcomeau.com/javascript/statements-vs-expressions/#expressions-1)
-- **JS statements**, on the other hand, **are instructions for the computer**. **A JS program is a sequence of statements**.
-- **_Statements provide slots to be filled with JS expressions_.**
-- Eg:
-  - `let a = 5 * b;`
-  - `const hi = "hello";` //notice that the right side is the JS expression, the whole thing is JS statement
-  - `console.log("Hi there" + name);` //notice the thing inside () is expression since it evaluates to a value, but the whole thing is a statement instructing to log the value.
-- **Tip to remember easily: Statements are the rigid structure that holds our program together, while Expressions fill in the details in the structure.**
-
-#### 8. What is the Conditional Rendering? Explain with a code example.
-
-- Conditional Rendering is a technique in which we can render different Ui based on some condition.
-- JSX allows us to perform conditional rendering by using JS expressions in {} within the JSX.
-- In these JS expressions we can evaluate some condition and based on its value we can return different JSX from a component.
-- Suppose we want to render Shimmer UI when data is null/undefined and when the data is loaded, we want to render the actual data with the JSX.
-- Code Example:
-- ```
-   return listOfRestaurant.length === 0 ? (
-      <Shimmer />
-    ) : (
-      <div className="body">
-        <div className="res-container">
-          {filteredRestaurant.map((resData) => (
-            <RestaurantCard key={resData.info.id} resData={resData} />
-          ))}
-        </div>
-      </div>
-    );
-  ```
-
-#### 9. What is the CORS? [Akshay's Video](https://www.youtube.com/watch?v=tcLW5d0KAYE)
-
-- It stands for Cross-Origin Resource Sharing.
-- Browsers do not allow us to call an API present on ohter origin from our origin. This is a web standard that makes resource sharing safe.
-- So, when we attempt to access a resource present on another origin from our origin, the browser imposes a **CORS policy** and blocks us from doing so.
-- Another origin means: another Domain/Port/Protocol.
-- The origin A(browser) sends a pre-flight request to the origin B(server) before actually making the API call for fetching the resource.
-- So the server then sends back additional HTTP Headers to the browser using which browser knows whther or not resource sharing is safe.
-- After this verification, the actual API call is made from the browser.
-- Additional HTTP headers are: Access-Control-Allow-Origin, Accept-Control-Allow-Methods etc.
-
-#### 10. What is async and await? [Read More](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
-
-- It is an alternative way to perform some asynchronous task.
-- It is just some syntactical sugar that makes the asynchronous task look like synchronous.
-- async used in function declaration makes a function asynchronous. This function will now return a Promise.
-- Inside the async function we can have 0 or more await expressions.
-- Await expressions make the async functions behave as though they're synchronous. They suspend the execution until the returned promise is fulfilled or rejected.
-- The resolved value of the promise is treated like the return value of the await expression.
-
-#### 11. What is the use of `const json = await data.json();` ?
-
-- This statement actually **converts the response Stream of data fetched from the API into a JS object.**
-- The json() function returns a **promise which eventually resolves to a JS object.**
-- **Note that despite the method being named json(), the result is not JSON** but is instead the result of **taking JSON as input and parsing it to produce a JavaScript object**.
-- We use it to get a JS object of restaurants which can be used to set the state variable resInfo.
+```
+````
