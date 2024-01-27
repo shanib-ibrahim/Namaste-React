@@ -161,10 +161,3 @@ function App() {
 | When we click an anchor tag, **it reloads the entire app, sends a network call to that page and fetches the HTML and renders it on the webpage.** | When we click some link/anchor tag, **no network call is made. We just load the required component in that place where needed in the DOM**. **The entire webpage is not reloaded**. |
 | This was how the websites worked traditionally.                                                                                                   | Here, all the **components are already loaded into the browser.** So there is no need to make network calls to the server to fetch the pages.                                       |
 | Makes our **app slow** because behind the scenes, there are a **lot of network calls being made and every time, the entire app gets reloaded.**   | Makes our **app fast** because there is **no re-loading of the entire app**. [**React achieves Client-Side Routing using React-Router library**]                                    |
-
-````
-
-```
-
-```
-````
