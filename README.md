@@ -8,8 +8,8 @@
 
 ## Steps to create routes in a React app
 
-- Step1: We imported the **createBrowserRouter** from **'react-router-dom'**
-- Step2: We call **createBrowserRouter()**, it takes some configuration in it.
+- Step1: import the **createBrowserRouter** from **'react-router-dom'**
+- Step2: call **createBrowserRouter()**, it takes some configuration in it.
   This configuration is a list/array of objects
   Each object defines a different path and what to render on that path
 - Step3: After creating the router configuration, we need to provide it to render the things as per the path
@@ -60,9 +60,74 @@ root.render(<RouterProvider router = {appRouter}/>);
 #### 1.What are various ways to add images into our App? Explain with code examples
 
 - Using img tag in JSX:
+
+```
+import React from 'react';
+
+function App() {
+  return (
+    <div>
+      <img src="/path/to/your/image.jpg" alt="Description" />
+    </div>
+  );
+}
+
+export default App;
+```
+
 - Importing images in React component:
+
+```
+import React from 'react';
+import yourImage from './path/to/your/image.jpg';
+
+function App() {
+  return (
+    <div>
+      <img src={yourImage} alt="Description" />
+    </div>
+  );
+}
+
+export default App;
+```
+
 - Using public folder:
+
+```
+import React from 'react';
+
+function App() {
+  return (
+    <div>
+      <img src="/your-image.jpg" alt="Description" />
+    </div>
+  );
+}
+
+export default App;
+```
+
 - CSS with background-image property:
+
+```
+import React from 'react';
+import './App.css'; // Import your CSS file
+
+function App() {
+  return (
+    <div className="image-container">
+      {/* Other content */}
+    </div>
+  );
+}
+
+.image-container {
+  background-image: url('/path/to/your/image.jpg');
+  background-size: cover;
+  /* Additional styles */
+}
+```
 
 #### 2. What would happen if we do console.log(useState())?
 
