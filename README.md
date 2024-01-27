@@ -1,116 +1,220 @@
-# Homework Questions
+## Important Resources:
 
-#### 1. What is a Microservice?
+- [Why to write super(props)?](https://overreacted.io/why-do-we-write-super-props/)
+- [React Lifecycle Method Diagram](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
+- [About Class Components](https://legacy.reactjs.org/docs/react-component.html)
+- [The GitHub API that we used for UserProfile](https://docs.github.com/en/rest/users/users?apiVersion=2022-11-28#get-a-user)
+- [Medium Article on React Component Lifecycle](<https://www.freecodecamp.org/news/react-component-lifecycle-methods/#:~:text=The%20render()%20lifecycle%20method&text=It%20is%20called%20every%20time,component%20has%20been%20re%2Drendered.&text=The%20render%20method%20displays%20the%20current%20count%20value%20and%20a%20button.>)
 
-- A Microservice is an **independently existing service in Microservice architecture.**
-- Each microservice is **independently deployable. and has its own business logic.**
-- Each microservice has its **own single responsibility** and **exists independently** in Microservice Architecture.
-- Updating, testing, deploying everything occurs within each microservice.
+## Notes:
 
-#### 2. What is Monolithic Architecture?
+- Class Component is nothing but normal JS class that has render() function which returns some piece of JSX
 
-- It is the traditional architecture where all the **various functionality like UI, Backend, DB, APIs, SMS, Email Notifications is written in the same single big project.**
-- To make a single small change in the app (eg: changing the color of a button in the UI), the **entire project needs to be built and compiled again**.
-- All the code of various services is in the same single project and we need to be **deploy the whole BULKY project.**
-- It can be thought of as a **unified large glacial unit with just one code base**.
-- All the **business logics are coupled together in the same project.**
+#### async with componentDidMount[Read More](https://www.valentinog.com/blog/await-react/)
 
-#### 3. Monolith vs Microservice?
+- Since componentDidMount() is the best place to make fetch calls, we can make it async.
 
-| Point                      | Monolith                                                                                                                       | Microservice Architecture                                                                          |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------- |
-| **Single Responsibility**  | There is one large code base where all the services are coupled together, so no SRP concept.                                   | The code base is split among multiple services, each service having its own single responsibility. |
-| **Deployment**             | Need to re-deploy the entire bulky code even on small changes in the app.                                                      | Each small microservice is independently deployable, so faster and more frequent release cycles.   |
-| **Difficulty in Changing** | A single small change in the app requires the entire big project to be built and compiled again.                               | Since each microservice is independent, we need not rebuild the entire project.                    |
-| **Flexibility**            | The technology/tech stack has to be the same throughout the whole project. Also use the same tech as used already in monolith. | Each team can choose the tech stack for each microservice, so no restrictions.                     |
-| **Development Speed**      | A large monolithic app makes development more complex and slow.                                                                | Each service is independently developed, so easy and quick development.                            |
+#### Use of `<Outlet/>` component
 
-#### 4. Why do we need a useEffect Hook?
+- So if we want to **push the children under the parent route based on the path**, we need a component provided by **'react-router-dom' library** called `<Outlet/>`.
+  - The **Outlet just acts as a placeholder(or a tunnel)** which later gets **replaced by the children of the parent route based on the path.**
+  - Eg: When we want to push children routes of AppLayout, such that
+    - If path = "/" -> push `<Body/>` as a child of AppLayout. ---> So `<Outlet/>` will be replaced by `<Body/>`
+    - If path = "/about" -> push `<About/>` as a child of AppLayout.---> So `<Outlet/>` will be replaced by `<About/>`
+    - If path = "/contact" -> push `<Contact/>` as a child of AppLayout.---> So `<Outlet/>` will be replaced by `<Contact/>`
 
-- useEffect() hook is another **utility function provided by React out-of-the-box**.
-- It takes 2 parameters: **callback function and dependency array(this is optional parameter)**.
-- It is used when **we need to do something after the component has been rendered**. We put that code inside useEffect's callback function.
-- Mostly, we make some **API call in it because that is a side-effect**. The API call can affect the UI of our app, so we don't want it to interfere with the rendering of the UI.
-- So,it is useful for **rendering the data on the web page in the case when we want the Skeleton Component to be rendered first quickly, then make API call and then re-render the component with the actual data**.
+#### Use of constructor()
 
-#### 5. What is Optional Chaining?
+- **constructor()**: It is the **1st lifecycle method to be executed as soon as a class component loads/renders/gets instantiated.**
+- **Rendering a class component means a new instance of a class is created**. Whenever this new instance is created, the constructor is called.
+- The props passed to the class component are received by the constructor() as an argument.
+- constructor() is the best place to specify the state for the class component. We can specify the initial state value here since constructor is the first thing to be called upon the loading of the class component.
 
-- It is a JS concept wherein we use the '?.' operator while reading some property from an object or calling a function.
-- It is helpful when there is a possibility that a reference might be missing.
-- If the object accessed/ function called evaluates to null/undefined, the expression shortcircuits and evaluates to undefined rather than throwing an error.
-- Eg: `const a = obj.first?.second;`
+#### Use of the render() in class components
 
-Here JS implicitly checks that `obj.first` is not null or undefined before attempting to access obj.first.second.
-If `obj.first` is null or undefined, then the entire expression is short-circuited and evaluated to undefined, thus `a = undefined`
+- **render()**: It is the **2nd lifecycle method** and gets executed after constructor().
 
-#### 6. What is Shimmer UI? [Read More](https://medium.com/lattice-what-is/shimmer-ui-a-better-way-to-show-loading-states-aa1f4e563d17)
+  - It renders the class component. By rendering we don't mean actual mounting of the class component in the DOM!!
+  - render() **does not mount the component** to the DOM. It just **generates the component's Virtual DOM representation based on the current props and state.**
 
-- Shimmer UI is a concept where we show **Dummy shimmery UI while loading the app**.
-- This is not the actual UI but a **dummy UI having Cards and other elements as placeholders untill the actual UI loads**.
-- This gives a better UX since it is like providing **some cues to the user as to what is going to load on the screen**.
-- It is makes our **app-loading state visually good** since we don't shock the user suddenly with all the UI, rather we prepare them for what layout is coming on the screen.
+  #### componentDidUpdate()?
 
-#### 7. What is the difference between JS Expression and JS Statement?
+  - It is the **4th Lifecycle method** that gets executed when the component gets actually updated in the DOM.
+  - If we need to do something after the something has changed/updated in the component, we can write that code in the componentDidUpdate().
+  - Eg:
 
-- JS Expression is any **JS code that produces a value**. It **can't exist individually and is a part of a JS statement**.
-- **An expression itself can have expressions in it**.
-- Eg: The following are JS Expressions since they evaluate to some value
-  - `1` → produces 1
-  - `"hello"` → produces "hello"
-  - `5 * 10` → produces 50
-  - `( 5 + 1 ) * 2` → produces 12. This has a total of 5 expressions in it. [Read More](https://www.joshwcomeau.com/javascript/statements-vs-expressions/#expressions-1)
-- **JS statements**, on the other hand, **are instructions for the computer**. **A JS program is a sequence of statements**.
-- **_Statements provide slots to be filled with JS expressions_.**
-- Eg:
-  - `let a = 5 * b;`
-  - `const hi = "hello";` //notice that the right side is the JS expression, the whole thing is JS statement
-  - `console.log("Hi there" + name);` //notice the thing inside () is expression since it evaluates to a value, but the whole thing is a statement instructing to log the value.
-- **Tip to remember easily: Statements are the rigid structure that holds our program together, while Expressions fill in the details in the structure.**
+```
+componentDidUpdate(prevState, prevProps){
+  if(this.state.count!== prevState.count){
+      //do something if the count changes...
+  }
+}
+```
 
-#### 8. What is the Conditional Rendering? Explain with a code example.
+## Homework Questions:
 
-- Conditional Rendering is a technique in which we can render different Ui based on some condition.
-- JSX allows us to perform conditional rendering by using JS expressions in {} within the JSX.
-- In these JS expressions we can evaluate some condition and based on its value we can return different JSX from a component.
-- Suppose we want to render Shimmer UI when data is null/undefined and when the data is loaded, we want to render the actual data with the JSX.
-- Code Example:
-- ```
-   return listOfRestaurant.length === 0 ? (
-      <Shimmer />
-    ) : (
-      <div className="body">
-        <div className="res-container">
-          {filteredRestaurant.map((resData) => (
-            <RestaurantCard key={resData.info.id} resData={resData} />
-          ))}
-        </div>
-      </div>
-    );
-  ```
+#### 1. How do you create nested routes using react-router-dom configuration?
 
-#### 9. What is the CORS? [Akshay's Video](https://www.youtube.com/watch?v=tcLW5d0KAYE)
+- We can create nested/children routes within other routes using a property called "children".
+- We can give the children while specifying the router configuration in createRouterBrowser().
+- These children will be a list of objects depicting the child routes of the parent route.
+- Eg: Suppose we want to specify children routes for `<AppLayout/>` component, we will do it as follows:
 
-- It stands for Cross-Origin Resource Sharing.
-- Browsers do not allow us to call an API present on ohter origin from our origin. This is a web standard that makes resource sharing safe.
-- So, when we attempt to access a resource present on another origin from our origin, the browser imposes a **CORS policy** and blocks us from doing so.
-- Another origin means: another Domain/Port/Protocol.
-- The origin A(browser) sends a pre-flight request to the origin B(server) before actually making the API call for fetching the resource.
-- So the server then sends back additional HTTP Headers to the browser using which browser knows whther or not resource sharing is safe.
-- After this verification, the actual API call is made from the browser.
-- Additional HTTP headers are: Access-Control-Allow-Origin, Accept-Control-Allow-Methods etc.
+```
+    const appRoute = createBrowserRouter([
+    {
+      path:"/",
+      element: <AppLayout/>,
+      children: [{  //the "/", "/about" and "/contact" routes are the children routes for the root route "/"
+        path: "/",
+        element: <Body/>,
+        },
+        {
+        path: "/about",
+        element: <About/>,
+        },
+        {
+        path: "/contact",
+        element: <Contact/>,
+        }
+      ]
+    }]);
+```
 
-#### 10. What is async and await? [Read More](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
+- We are creating children routes on the root route "/". So on `<AppLayout/>`'s route, we have childrren routes to `<Body/>`, `<About/>` and `<Contact/>`.
+- After creating the children routes in appRouter, we need to tweak the JSX of the `<AppLayout/>`.
 
-- It is an alternative way to perform some asynchronous task.
-- It is just some syntactical sugar that makes the asynchronous task look like synchronous.
-- async used in function declaration makes a function asynchronous. This function will now return a Promise.
-- Inside the async function we can have 0 or more await expressions.
-- Await expressions make the async functions behave as though they're synchronous. They suspend the execution until the returned promise is fulfilled or rejected.
-- The resolved value of the promise is treated like the return value of the await expression.
+```
+const AppLayout = () =>{
+  return (<div className = "app">
+            <Header/>
+            <Outlet/> //this Outlet component will be replaced by the child of the AppLayout as per the path.
+          </div>
+        )
+}
+```
 
-#### 11. What is the use of `const json = await data.json();` ?
+#### 2.createHashRouter and createMemoryRouter from React Router docs.
 
-- This statement actually **converts the response Stream of data fetched from the API into a JS object.**
-- The json() function returns a **promise which eventually resolves to a JS object.**
-- **Note that despite the method being named json(), the result is not JSON** but is instead the result of **taking JSON as input and parsing it to produce a JavaScript object**.
-- We use it to get a JS object of restaurants which can be used to set the state variable resInfo.
+- createHashRouter:
+  -- The HashRouter is used for navigation based on the hash portion of the URL. It uses the fragment identifier (the part of the URL after the # symbol) to determine the route.
+
+  -- When you use a HashRouter, your routes will look something like http://example.com/#/your-route.
+
+  -- This type of router is commonly used in environments where the server cannot handle client-side routing, such as when hosting a single-page application on a static file server.
+
+  -- ```import { createHashRouter } from 'react-router-dom';
+
+      const HashRouter = createHashRouter();
+
+      const App = () => (
+        <HashRouter>
+          {/* Your application components with Routes, Links, etc. */}
+        </HashRouter>
+      );
+      ```
+
+- createMemoryRouter:
+  -- The MemoryRouter is used for navigation within the memory of the application. It doesn't rely on the browser's URL, making it suitable for non-browser environments or scenarios where you want to keep navigation state within the application itself.
+  -- It's often used in testing or in environments where the application doesn't have access to a real browser URL (e.g., server-side rendering).
+  -- ```import { createMemoryRouter } from 'react-router-dom';
+
+      const MemoryRouter = createMemoryRouter();
+
+      const App = () => (
+      <MemoryRouter>
+      {/_ Your application components with Routes, Links, etc. _/}
+      </MemoryRouter>
+      );```
+
+#### 3. What is the order of lifecycle method calls in Class-Based Components?
+
+- During the execution of a class-based component, we have **5 Lifecycle methods executed in the following order**:
+
+  **`constructor()` -> `render()` -> `componentDidMount()` -> `componentDidUpdate()` -> `compononentWillUnmount()`**
+
+#### 4. Why do we use componentDidMount?
+
+- **componentDidMount()**: It is the **3rd lifecycle method** to be executed in the Lifecycle of a class component.
+- It executes after the **render() method**.
+- It is the **best place to make API calls/fetch calls** because it is executed after the class component has been rendered to the DOM.
+- Its very name "componentDidMount" suggests that component has been successfully completely mounted to the DOM.
+- Now in React, we always want to render the skeleton component quickly without waiting for anything. Then once it is rendered, we quickly make an API call in the componentDidMount() which fetches the data and now updates the state with that data.
+- As the state updation triggers re-render of the component, now the component re-renders with the actual data given by the API. This is how componentDidMount() is useful.
+
+#### 5. Why do we use componentWillUnmount? Show with example.
+
+- **compononentWillUnmount()**: It is the **5th and the last Lifecycle method** that gets executed just before the class component is about to get unmounted from the DOM.
+- It is useful for doing any **clean up like clearing the interval, or timeout** that we might have **set earlier while mounting that component**.
+- In SPA, when we are leaving a page, we **are not literally doing so. We are just refreshing and reloading components in the same single HTML page**.
+- So any **timers or intervals that we have set in the component remain in the browser even after the component gets unmounted from the DOM**.
+- We don't want multiple intervals or timers being run in the browser even after the component has been unmounted from the DOM. So for that, make use of componentWillUnmount().
+- This is very important for building **SCALABLE and PERFORMANT APPS.**
+  **"CLEAR THE MESS THAT YOU MADE WHILE MOUNTING THE COMPONENT!!"**
+- Eg: Suppose we set an interval while mounting the component. Now before unmounting, we must clear it:
+
+```
+  componentDidMount(){ //every time the component is mounted to the DOM, a new interval is set
+    this.interval = setInterval(()=>{
+      console.log("Namaste React OP")
+    }, 1000); //after every 1 second, prints "Namaste React OP"
+  }
+  componentWillUnmount(){
+    //clear the interval here:
+    clearInterval(this.interval);
+  }
+```
+
+- This way, if we now **unmount the component from the DOM , the interval is cleared. Then later when we mount it again, a new interval is set from 0. So we just have one interval running in browser that too only when the component is mounted.**
+
+#### 6. Why do we use super(props) in constructor?
+
+- **Class components in React are made by extending the 'React.Component' class exported by the React library**.
+- This means any **class component that we make is a child of that Component parent class.**
+- We know in our **class components, the 1st method to be called is constructor().**
+- In the constructor() of class components, we must write **super(props) as the very first line.**
+- Note: **super() call is a call to the Parent class's constructor ie. call to the Component class's constructor.**
+- This is a **common OOP principle that whenever we call the child constructor, the first thing to do in the child constructor is to initialise the parent class members.**
+- Reason being **child class derives the parent class and it must be using the parent class members**. **It would be wrong to use those parent class members in child class without even initialising them. This would cause an error.**
+- Similarly **in case of React class components, we know we will be using {this.props}. The 'this' object is actually coming from the parent class 'Component'. So we can't use {this.props} unless the 'this.props' has been initialised in the parent class.**
+- **super(props) initialises the 'this.props'** so that it can be used in the child i.e. the React class component.
+
+- So, Recommended way: - **React recommends calling super() with props as the first thing to make sure that this.props has been initialised!!**
+
+```
+constructor(props){
+  super(props);  //call super(props) first to initialise 'this.props'
+  console.log(this.props); //then we can access 'this.props'
+}
+```
+
+- What if we don't pass props to super():
+
+```
+constructor(props){
+  super(); //calling super() without props
+  console.log(props); //✅ logs the props correctly since 'props' is the local variable
+  console.log(this.props); //undefined, since this.props has not been initialised ie. props have not been attached to the 'this' object
+}
+```
+
+#### 7. Why can't we have async callback function in useEffect()?
+
+- [Read More on Medium](https://medium.com/@achieversittraininga/using-async-await-inside-reacts-useeffect-hook-bedc401be860#:~:text=Because%20the%20useEffect%20hook%20in,invoked%2C%20resulting%20in%20a%20problem.)
+
+- [Read More on HashNode](https://shubhambhoj.hashnode.dev/useeffect-async)
+- Because an async function implicitly returns a promise. But the useEffect() hook expects its callback function to either return nothing or return a cleanup function.
+- So React's useEffect hook expects its callback function to return a cleanup function which gets executed just before the component unmounts. So if we make tha callback function as async, it causes a bug as cleanup function will never be called.
+- useEffect must not return anything besides a function, which is used for clean-up.
+- It looks like you wrote useEffect(async () => ...) or returned a Promise. Instead, write the async function inside your effect and call it immediately:
+
+```
+useEffect(() => {
+  async function fetchData() {
+    // You can await here
+    const response = await MyAPI.getData(someId);
+    // ...
+  }
+  fetchData();
+}, [someId]);  // Or [] if effect doesn't need props or state
+```
