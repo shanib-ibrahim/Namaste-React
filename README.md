@@ -2,7 +2,7 @@
 
 #### 1. What is Emmet? [Read More](https://emmet.io/)
 
-- It is a plugin used to auto-generate boiler-plate code. For example, we can use '!' to generate HTMl boilerplate code
+- It is a plugin used to auto-generate boiler-plate code. For example, we can use '!' to generate HTML boilerplate code
 - We can use abbreviations/short expressions to generate HTML and CSS.
 - It is a toolkit that makes writing HTML, CSS code really easy!
 
